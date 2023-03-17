@@ -21,6 +21,8 @@ The YouTube video [OAuth 2.0 and OpenID Connect (in plain English)](https://www.
     * e.g. the user
 * __Client__
     * refers to the application that wants the data
+    * has to be registered with the Auth Server beforehand
+        * gets a unique client ID and a secret
 * __Authorization Server__
     * system used to accept to give the information
 * __Resource Server__
@@ -32,6 +34,7 @@ The YouTube video [OAuth 2.0 and OpenID Connect (in plain English)](https://www.
     * shows the authorization server, where the user ends up after completing the flow
 * __Access Token__
     * key the client uses to get access to the data on the resource server
+    * sometimes also called Bearer Token
 * __Scope__
     * any type of permissions that make sense in the system
     * the authorization grant has a list of scopes
@@ -63,5 +66,15 @@ The YouTube video [OAuth 2.0 and OpenID Connect (in plain English)](https://www.
         * access token is scoped to the scopes the user consented to
     6. (back channel) client goes to the resource server and can access the data with the access token
 
-
-Break at 33:00 min
+## Flow Types
+* Authorization Code Flow
+    * the one described above
+* Implicit Flow
+    * for Apps without backchannel
+    * skip the authorization code exchange step
+    * directly get the access token directly
+    * considered not as secure as other types
+* Resource Owner Passwords Credentials Flow
+    * back channel only
+* Client Credentials Flow
+    * back channel only
